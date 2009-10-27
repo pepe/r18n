@@ -19,7 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
 require 'rubygems'
-gem 'sinatra'
+begin
+  gem 'sinatra'
+rescue Gem::LoadError
+  gem 'sinatra-sinatra'
+end
 require 'sinatra/base'
 
 gem 'r18n-core', '~>0.3'
